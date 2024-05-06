@@ -25,12 +25,14 @@ function init() {
       voice_select.appendChild(option);
   
     }
+      // voices not spawning properly
   }
-  populateVoices();
-  if (speechSynthesis.onvoiceschanged !== undefined) {
-    speechSynthesis.onvoiceschanged = populateVoices;
+  if (synth.getVoices().length !== 0) {
+    populateVoices();
+  } else {
+    synth.onvoiceschanged = populateVoices;
   }
-
+  
   button.addEventListener("click", function() {
     let utterance = new SpeechSynthesisUtterance(text.value);
     let selectedOption = voice_select.selectedOptions[0].getAttribute('data-name');
