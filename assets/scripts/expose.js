@@ -9,8 +9,8 @@ function init() {
   var volslider = volcontrol.getElementsByTagName("input").item(0);
   var volimage = volcontrol.getElementsByTagName("img").item(0);
 
-  hornselector.addEventListener("change", (event) => {
-    switch(hornselector.selectedIndex){
+  hornselect.addEventListener("change", (event) => {
+    switch(hornselect.selectedIndex){
         case 1:
         hornimage.setAttribute("src", "assets/images/air-horn.svg");
         hornimage.setAttribute("alt", "No image selected");
