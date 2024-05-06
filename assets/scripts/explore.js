@@ -11,6 +11,7 @@ function init() {
 
   // from web API documentation
     function populateVoices() {
+    voices = synth.getVoices();
     for(let i = 0; i < voices.length; i++){
       let option = document.createElement("option");
       option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
@@ -25,7 +26,7 @@ function init() {
       voice_select.appendChild(option);
   
     }
-      // voices not spawning properly
+      
   }
   if (synth.getVoices().length !== 0) {
     populateVoices();
