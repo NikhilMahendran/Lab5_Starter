@@ -5,9 +5,7 @@ function init() {
   var hornimage = document.getElementsByTagName("img").item(0);
   var audio = document.getElementsByTagName("audio").item(0);
   const confetti = new JSConfetti()
-  var volcontrol = document.getElementById("volume-controls");
-  var volslider = volcontrol.getElementsByTagName("input").item(0);
-  var volimage = volcontrol.getElementsByTagName("img").item(0);
+
 
   hornselect.addEventListener("change", (event) => {
     switch(hornselect.selectedIndex){
@@ -34,6 +32,10 @@ function init() {
     }
   });
 
+  var volcontrol = document.getElementById("volume-controls");
+  var volslider = volcontrol.getElementsByTagName("input").item(0);
+  var volimage = volcontrol.getElementsByTagName("img").item(0);
+  
   audio.volume = volslider.value/100;
 
   volslider.addEventListener("input", (event) => {
