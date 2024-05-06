@@ -4,6 +4,9 @@ function init() {
   var hornselect = document.querySelector("#horn-select");
   var hornimage = document.getElementsByTagName("img").item(0);
   var audio = document.getElementsByTagName("audio").item(0);
+  var volcontrol = document.getElementById("volume-controls");
+  var volslider = volcontrol.getElementsByTagName("input").item(0);
+  var volimage = volcontrol.getElementsByTagName("img").item(0);
   const confetti = new JSConfetti()
 
 
@@ -11,30 +14,24 @@ function init() {
     switch(hornselect.selectedIndex){
         case 1:
         hornimage.setAttribute("src", "assets/images/air-horn.svg");
-        hornimage.setAttribute("alt", "No image selected");
         audio.setAttribute("src","assets/audio/air-horn.mp3");
         break;
       case 2:
         hornimage.setAttribute("src", "assets/images/car-horn.svg");
-        hornimage.setAttribute("alt", "car horn");
         audio.setAttribute("src","assets/audio/car-horn.mp3");
         break;
       case 3:
         hornimage.setAttribute("src", "assets/images/party-horn.svg");
-        hornimage.setAttribute("alt", "party horn");
         audio.setAttribute("src","assets/audio/party-horn.mp3");
         break;
       default:
         hornimage.setAttribute("src", "assets/images/no-image.png");
-        hornimage.setAttribute("alt", "No image selected");
         audio.setAttribute("src","");
         break;
     }
   });
 
-  var volcontrol = document.getElementById("volume-controls");
-  var volslider = volcontrol.getElementsByTagName("input").item(0);
-  var volimage = volcontrol.getElementsByTagName("img").item(0);
+
   
   audio.volume = volslider.value/100;
 
